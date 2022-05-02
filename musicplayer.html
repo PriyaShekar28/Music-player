@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>music player</title>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="main">
+    <p id="logo"><i class="fa fa-music"></i>My Music</p>
+     <div class="left">
+       <img id="track_image">
+         <div class="volume">
+            <p id="volume_show">20</p>
+            <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+            <input type="range" min="0" max="100" value="20" onchange="volume_change()" id="volume">  
+         </div>
+      </div>
+ 
+  	 <div class="right">
+        <div class="show_song_no">
+          <p id="present">1</p>
+          <p>/</p>
+          <p id="total">5</p>
+        </div> 
+         <p id="title">Title</p>
+         <p id="artist">Artist name</p>
+  	 <div class="middle">
+  	       <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+      	   <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+  	       <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+  	 </div>
+     <div class="duration">
+           <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+           <i onclick="SongTimeUpdate()" id="duration_slider"></i>
+           <span class="current-time">start</span>
+           <span class="song-duration">end</span>
+     </div>
+           <button id="auto" onclick="autoplay_switch()">Auto play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+  	 </div>
+  </div>
+<script src="scripts.js"></script>
+</body>
+</html>
